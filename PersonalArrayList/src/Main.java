@@ -62,6 +62,15 @@ public class Main {
         list.removeFirst();
         System.out.println("What is the integer at index 0 in the array? " + list.baseArray[0]); // will be 20
     }
+    public static void testRemoveLast(){
+        DynamicArray<Integer> list = new DynamicArray<>(); //populate the list
+        list.addLast(10); list.addLast(20); list.addLast(30); list.addLast(40); list.addLast(50);
+        System.out.println("--- Testing removeLast ---");
+        System.out.println("What is the integer at index 0 in the array? " + list.baseArray[list.size - 1]); // will be 10
+        list.removeLast();
+        System.out.println("What is the integer at index 0 in the array? " + list.baseArray[list.size - 1]); // will be 20
+    }
+
     public static void testRemoveAt(){
         DynamicArray<Integer> list = new DynamicArray<>(); //populate the list
         list.addLast(10); list.addLast(20); list.addLast(30); list.addLast(40); list.addLast(50);
@@ -117,9 +126,9 @@ public class Main {
         DynamicArray<Integer> list = new DynamicArray<>(); //populate the list
         list.addLast(10); list.addLast(20); list.addLast(30); list.addLast(40); list.addLast(50);
         System.out.println("--- Testing clear ---");
-        System.out.println("What is the current Array content? " + list.baseArray);
+        System.out.println("What is the current Array content? " + list);
         list.clear();
-        System.out.println("What is the new Array content? " + list.baseArray);
+        System.out.println("What is the new Array content? " + list);
     }
     public static void testToString(){
         DynamicArray<Integer> list = new DynamicArray<>(); //populate the list
@@ -130,7 +139,7 @@ public class Main {
     public static void testEquals(){
         DynamicArray<Integer> list = new DynamicArray<>(); //populate the list
         list.addLast(10); list.addLast(20); list.addLast(30); list.addLast(40); list.addLast(50);
-        System.out.println("--- Testing toString ---");
+        System.out.println("--- Testing equals ---");
         System.out.println("Are the two arrays equal? " + list.clone().equals(list));
     }
 
@@ -143,6 +152,7 @@ public class Main {
         testAddFirst();
         testInsertAt();
         testRemoveFirst();
+        testRemoveLast();
         testRemoveAt();
         testGetFirst();
         testGet();
