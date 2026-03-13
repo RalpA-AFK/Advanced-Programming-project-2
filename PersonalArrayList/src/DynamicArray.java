@@ -129,8 +129,8 @@ public class DynamicArray<E> {
         baseArray[i] = newElem; //assigns new element to old element index
         return oldElem; //prints out element that was their previously
     }
-    public E[] toArray(){
-        E[] newArray = (E[]) new Object[size];
+    public Object[] toArray(){
+        Object[] newArray = new Object[size];
         for (int i = 0; i < size; i++) { // newArray takes the baseArrays elements
             newArray[i] = baseArray[i];      // but does not change baseArray
         }
